@@ -1,0 +1,36 @@
+﻿<Window x:Class="DeveloperTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        Title="MainWindow" Height="740" Width="1297">
+    <Grid>
+        <DataGrid VerticalAlignment="Top" Height="554" Margin="10,146,0,0" HorizontalAlignment="Left" Width="632" IsReadOnly="True" SelectionMode="Single"
+                  ItemsSource="{Binding EmailHeaders, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedValue="{Binding SelectedEmailHeader, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="From" Width="223" Binding="{Binding From}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Subject" Width="200" Binding="{Binding Subject}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Date" Width="200" Binding="{Binding Date, StringFormat='yyyy-MM-dd HH:mm:ss '}" SortMemberPath="Date" SortDirection="Descending"></DataGridTextColumn>
+            </DataGrid.Columns>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding GetEmailBodyCommand}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </DataGrid>
+        <TextBox Text="{Binding ServerInfo.Server, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="98,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <Label Content="Server" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top"/>
+        <Label Content="Port" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding ServerInfo.Port, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="98,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <Label Content="Encryption" HorizontalAlignment="Left" Margin="323,7,0,0" VerticalAlignment="Top"/>
+        <ComboBox SelectedValuePath="Key" DisplayMemberPath="Value" SelectedValue="{Binding ServerInfo.Encryption, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Encryptions}" HorizontalAlignment="Left" Margin="411,10,0,0" VerticalAlignment="Top" Width="190"/>
+        <Label Content="Username" HorizontalAlignment="Left" Margin="323,38,0,0" VerticalAlignment="Top"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="323,69,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding ServerInfo.Username, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="411,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <TextBox Text="{Binding ServerInfo.Password, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="411,73,0,0" VerticalAlignment="Top" Width="190"/>
+        <Button Content="{Binding StartStopButtonText, UpdateSourceTrigger=PropertyChanged}" Command="{Binding StartStopDownloadingEmailsCommand}" HorizontalAlignment="Left" Margin="446,104,0,0" VerticalAlignment="Top" Width="155" Height="36"/>
+        <Label Content="Server type" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top"/>
+        <ComboBox SelectedValuePath="Key" DisplayMemberPath="Value" SelectedValue="{Binding ServerInfo.ServerType, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding ServerTypes}" HorizontalAlignment="Left" Margin="98,10,0,0" VerticalAlignment="Top" Width="190"/>
+        <TextBox HorizontalAlignment="Left" Height="690" Margin="647,10,0,0" TextWrapping="Wrap" Text="{Binding SelectedEmailBody, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="632"/>
+
+    </Grid>
+</Window>

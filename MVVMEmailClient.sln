@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMEmailClient", "MVVMEmailClient\MVVMEmailClient.csproj", "{BCF2D7BC-544A-41E8-B3B1-D4B55314AFBC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCF2D7BC-544A-41E8-B3B1-D4B55314AFBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCF2D7BC-544A-41E8-B3B1-D4B55314AFBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCF2D7BC-544A-41E8-B3B1-D4B55314AFBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCF2D7BC-544A-41E8-B3B1-D4B55314AFBC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {707B4A48-2122-4DA4-959B-153A37FB9099}
+	EndGlobalSection
+EndGlobal
