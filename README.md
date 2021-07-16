@@ -1,6 +1,6 @@
 # Async WPF Email Client following the MVVM design pattern.
 
-# Application Requirements
+## Application Requirements
 
 - Connect, using Mail.dll, to a mail server of the type specified in the server type combo box. The options should be 'IMAP' and 'POP3'. The encryption options should be 'Unencrypted', 'SSL/TLS' and 'STARTTLS'.
 - Once connected, the app should begin downloading the message envelopes/headers part for all emails in the inbox automatically, and display the message data in the data grid on the left as they download. The columns should at least include 'From', 'Subject' and 'Date', but you're welcome to add more.
