@@ -1,4 +1,4 @@
-# Async WPF Email Client following the MVVM design pattern.
+# Async WPF Email Client following the MVVM design pattern
 
 ## Application Requirements
 
